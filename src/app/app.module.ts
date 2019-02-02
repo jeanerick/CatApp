@@ -1,3 +1,4 @@
+import { CatService } from './../services/CatService';
 import { NgModule, ErrorHandler } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
@@ -22,7 +23,8 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    CatService
   ]
 })
 export class AppModule {}
