@@ -1,22 +1,8 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title></ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <img *ngIf="catUrl" [src]="catUrl">
-    </ion-card-content>
-  </ion-card>
-
-  <ion-footer no-shadow>
-    <ion-toolbar position="bottom">
-      <button (click)="getCat()" ion-button full color="primary">😍 Felicidade</button>
-    </ion-toolbar>
-  </ion-footer>
+<ion-content class="card-background-page">
+    <ion-slides #slides (ionSlideDidChange)='onEnd(slides)'>
+        <ion-slide *ngFor="let cat of cats" >
+            <img *ngIf="cat.url" [src]="cat.url">
+        </ion-slide>
+      </ion-slides>
 </ion-content>
